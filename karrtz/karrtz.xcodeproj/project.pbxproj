@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		754A7CD62860AA9800B306DA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CD52860AA9800B306DA /* Card.swift */; };
+		754A7CD82860AADD00B306DA /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CD72860AADD00B306DA /* CardType.swift */; };
+		754A7CDA2860B39D00B306DA /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CD92860B39D00B306DA /* Pack.swift */; };
+		754A7CDE2860DDF700B306DA /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CDD2860DDF700B306DA /* ModelData.swift */; };
+		754A7CE02860E4DD00B306DA /* PackRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CDF2860E4DD00B306DA /* PackRow.swift */; };
+		754A7CE22860E7AA00B306DA /* PacksData.json in Resources */ = {isa = PBXBuildFile; fileRef = 754A7CE12860E7AA00B306DA /* PacksData.json */; };
+		754A7CE42860EA4200B306DA /* PackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CE32860EA4200B306DA /* PackList.swift */; };
+		754A7CE62860F38700B306DA /* PackDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CE52860F38700B306DA /* PackDetail.swift */; };
 		7550EDE3285F95B90006B577 /* karrtzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDE2285F95B90006B577 /* karrtzApp.swift */; };
-		7550EDE5285F95B90006B577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDE4285F95B90006B577 /* ContentView.swift */; };
 		7550EDE7285F95BB0006B577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7550EDE6285F95BB0006B577 /* Assets.xcassets */; };
 		7550EDEA285F95BB0006B577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7550EDE9285F95BB0006B577 /* Preview Assets.xcassets */; };
 		7550EDEC285F95BB0006B577 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDEB285F95BB0006B577 /* Persistence.swift */; };
@@ -18,6 +25,7 @@
 		7550EE05285F95BB0006B577 /* karrtzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EE04285F95BB0006B577 /* karrtzUITestsLaunchTests.swift */; };
 		7550EE11285F9D8F0006B577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDE4285F95B90006B577 /* ContentView.swift */; };
 		7550EE12285F9D8F0006B577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDE4285F95B90006B577 /* ContentView.swift */; };
+		7550EE13285FB1040006B577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDE4285F95B90006B577 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		754A7CD52860AA9800B306DA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		754A7CD72860AADD00B306DA /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		754A7CD92860B39D00B306DA /* Pack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
+		754A7CDD2860DDF700B306DA /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		754A7CDF2860E4DD00B306DA /* PackRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackRow.swift; sourceTree = "<group>"; };
+		754A7CE12860E7AA00B306DA /* PacksData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PacksData.json; sourceTree = "<group>"; };
+		754A7CE32860EA4200B306DA /* PackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackList.swift; sourceTree = "<group>"; };
+		754A7CE52860F38700B306DA /* PackDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackDetail.swift; sourceTree = "<group>"; };
 		7550EDDF285F95B90006B577 /* karrtz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = karrtz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7550EDE2285F95B90006B577 /* karrtzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = karrtzApp.swift; sourceTree = "<group>"; };
-		7550EDE4285F95B90006B577 /* ContentView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ContentView.swift; path = karrtz/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		7550EDE4285F95B90006B577 /* ContentView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ContentView.swift; path = karrtz/views/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		7550EDE6285F95BB0006B577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7550EDE9285F95BB0006B577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7550EDEB285F95BB0006B577 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -77,6 +93,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		754A7CD42860AA7900B306DA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				754A7CDD2860DDF700B306DA /* ModelData.swift */,
+				754A7CD52860AA9800B306DA /* Card.swift */,
+				754A7CD72860AADD00B306DA /* CardType.swift */,
+				754A7CD92860B39D00B306DA /* Pack.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		754A7CDB2860DBA400B306DA /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				754A7CE12860E7AA00B306DA /* PacksData.json */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		754A7CDC2860DDBF00B306DA /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7550EDE4285F95B90006B577 /* ContentView.swift */,
+				754A7CDF2860E4DD00B306DA /* PackRow.swift */,
+				754A7CE32860EA4200B306DA /* PackList.swift */,
+				754A7CE52860F38700B306DA /* PackDetail.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		7550EDD6285F95B90006B577 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +146,10 @@
 		7550EDE1285F95B90006B577 /* karrtz */ = {
 			isa = PBXGroup;
 			children = (
+				754A7CDC2860DDBF00B306DA /* views */,
+				754A7CDB2860DBA400B306DA /* resources */,
+				754A7CD42860AA7900B306DA /* model */,
 				7550EDE2285F95B90006B577 /* karrtzApp.swift */,
-				7550EDE4285F95B90006B577 /* ContentView.swift */,
 				7550EDE6285F95BB0006B577 /* Assets.xcassets */,
 				7550EDEB285F95BB0006B577 /* Persistence.swift */,
 				7550EDED285F95BB0006B577 /* karrtz.xcdatamodeld */,
@@ -241,6 +289,7 @@
 			files = (
 				7550EDEA285F95BB0006B577 /* Preview Assets.xcassets in Resources */,
 				7550EDE7285F95BB0006B577 /* Assets.xcassets in Resources */,
+				754A7CE22860E7AA00B306DA /* PacksData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +314,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A7CD62860AA9800B306DA /* Card.swift in Sources */,
 				7550EDEC285F95BB0006B577 /* Persistence.swift in Sources */,
+				754A7CE02860E4DD00B306DA /* PackRow.swift in Sources */,
+				754A7CE42860EA4200B306DA /* PackList.swift in Sources */,
 				7550EDEF285F95BB0006B577 /* karrtz.xcdatamodeld in Sources */,
-				7550EDE5285F95B90006B577 /* ContentView.swift in Sources */,
+				7550EE13285FB1040006B577 /* ContentView.swift in Sources */,
+				754A7CDA2860B39D00B306DA /* Pack.swift in Sources */,
+				754A7CDE2860DDF700B306DA /* ModelData.swift in Sources */,
 				7550EDE3285F95B90006B577 /* karrtzApp.swift in Sources */,
+				754A7CE62860F38700B306DA /* PackDetail.swift in Sources */,
+				754A7CD82860AADD00B306DA /* CardType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +493,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +523,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
