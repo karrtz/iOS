@@ -15,6 +15,9 @@
 		754A7CE22860E7AA00B306DA /* PacksData.json in Resources */ = {isa = PBXBuildFile; fileRef = 754A7CE12860E7AA00B306DA /* PacksData.json */; };
 		754A7CE42860EA4200B306DA /* PackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CE32860EA4200B306DA /* PackList.swift */; };
 		754A7CE62860F38700B306DA /* PackDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CE52860F38700B306DA /* PackDetail.swift */; };
+		754A7CEA2861AEF500B306DA /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CE92861AEF500B306DA /* CardCell.swift */; };
+		754A7CEC2861B4F500B306DA /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CEB2861B4F500B306DA /* CardList.swift */; };
+		754A7CEE2861B58200B306DA /* CardDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CED2861B58200B306DA /* CardDetail.swift */; };
 		7550EDE3285F95B90006B577 /* karrtzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550EDE2285F95B90006B577 /* karrtzApp.swift */; };
 		7550EDE7285F95BB0006B577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7550EDE6285F95BB0006B577 /* Assets.xcassets */; };
 		7550EDEA285F95BB0006B577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7550EDE9285F95BB0006B577 /* Preview Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		754A7CE12860E7AA00B306DA /* PacksData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PacksData.json; sourceTree = "<group>"; };
 		754A7CE32860EA4200B306DA /* PackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackList.swift; sourceTree = "<group>"; };
 		754A7CE52860F38700B306DA /* PackDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackDetail.swift; sourceTree = "<group>"; };
+		754A7CE92861AEF500B306DA /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		754A7CEB2861B4F500B306DA /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		754A7CED2861B58200B306DA /* CardDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetail.swift; sourceTree = "<group>"; };
 		7550EDDF285F95B90006B577 /* karrtz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = karrtz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7550EDE2285F95B90006B577 /* karrtzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = karrtzApp.swift; sourceTree = "<group>"; };
 		7550EDE4285F95B90006B577 /* ContentView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = ContentView.swift; path = karrtz/views/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -115,12 +121,31 @@
 		754A7CDC2860DDBF00B306DA /* views */ = {
 			isa = PBXGroup;
 			children = (
+				754A7CE82860F6FC00B306DA /* card */,
+				754A7CE72860F6E100B306DA /* pack */,
 				7550EDE4285F95B90006B577 /* ContentView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		754A7CE72860F6E100B306DA /* pack */ = {
+			isa = PBXGroup;
+			children = (
 				754A7CDF2860E4DD00B306DA /* PackRow.swift */,
 				754A7CE32860EA4200B306DA /* PackList.swift */,
 				754A7CE52860F38700B306DA /* PackDetail.swift */,
 			);
-			path = views;
+			path = pack;
+			sourceTree = "<group>";
+		};
+		754A7CE82860F6FC00B306DA /* card */ = {
+			isa = PBXGroup;
+			children = (
+				754A7CE92861AEF500B306DA /* CardCell.swift */,
+				754A7CEB2861B4F500B306DA /* CardList.swift */,
+				754A7CED2861B58200B306DA /* CardDetail.swift */,
+			);
+			path = card;
 			sourceTree = "<group>";
 		};
 		7550EDD6285F95B90006B577 = {
@@ -314,12 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A7CEE2861B58200B306DA /* CardDetail.swift in Sources */,
 				754A7CD62860AA9800B306DA /* Card.swift in Sources */,
 				7550EDEC285F95BB0006B577 /* Persistence.swift in Sources */,
+				754A7CEA2861AEF500B306DA /* CardCell.swift in Sources */,
 				754A7CE02860E4DD00B306DA /* PackRow.swift in Sources */,
 				754A7CE42860EA4200B306DA /* PackList.swift in Sources */,
 				7550EDEF285F95BB0006B577 /* karrtz.xcdatamodeld in Sources */,
 				7550EE13285FB1040006B577 /* ContentView.swift in Sources */,
+				754A7CEC2861B4F500B306DA /* CardList.swift in Sources */,
 				754A7CDA2860B39D00B306DA /* Pack.swift in Sources */,
 				754A7CDE2860DDF700B306DA /* ModelData.swift in Sources */,
 				7550EDE3285F95B90006B577 /* karrtzApp.swift in Sources */,

@@ -12,7 +12,7 @@ struct PackRow: View {
     
     var body: some View {
         HStack {
-            Text(pack.name)
+            Text(pack.name).font(.title2)
             Spacer()
         }
     }

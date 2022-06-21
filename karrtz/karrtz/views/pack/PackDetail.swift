@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct PackDetail: View {
+    var pack : Pack
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        CardList(pack: pack)
     }
 }
 
 struct PackDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PackDetail()
+        PackDetail(pack: packs[0])
     }
 }
