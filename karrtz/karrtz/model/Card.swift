@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct Card : Identifiable, Decodable {
+class Card : Identifiable, Decodable, ObservableObject {
+    init(id: Int, text: String, type: CardType) {
+        self.id = id
+        self.text = text
+        self.type = type
+    }
     let id : Int
-    let text : String
-    let type : CardType
+    var text : String
+    var type : CardType
+    
 }

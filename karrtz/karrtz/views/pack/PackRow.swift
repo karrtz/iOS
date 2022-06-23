@@ -20,7 +20,7 @@ struct PackRow: View {
 
 struct PackRow_Previews: PreviewProvider {
     static var previews: some View {
-        PackRow(pack: packs[0])
+        PackRow(pack: getPacks()[0])
             .previewLayout(.fixed(width: 300, height: 70))
     }
 }

@@ -8,30 +8,43 @@
 import SwiftUI
 
 struct CardDetail: View {
-    var card: Card
+    @ObservedObject var card: Card
+    @State var text : String
+    @State var type : CardType
+    
+    init(card: Card) {
+        self.card = card
+        self.text = card.text
+        self.type = card.type
+    }
+    
     var body: some View {
         //Color(card.type.rawValue).ignoresSafeArea()
         
-        Text(card.text)
-            //.foregroundColor(card.type == CardType.WHITE ? .white : .black)
-            .font(.title)
-            .padding()
-           /* .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color(card.type.rawValue), lineWidth: 1)
-                        .background(card.type == CardType.WHITE ? .black : .white).ignoresSafeArea()
-                        
-            )*/
-            //.background(card.type == CardType.WHITE ? .white : .black))
+        Section(header: Text("Type").font(.title)) {
+            Picker(selection: $card.type, label: Text("Card Type").font(.title2)) {
+                Text("white").tag(CardType.WHITE)
+                Text("black").tag(CardType.BLACK)
+            }
+            .onTapGesture {
+                print("type \(card.type.rawValue) should now be \(type)")
+                card.type = type
+                }
+        }
         
-        //.foregroundColor(Color(card.type.rawValue))
-        //Color(card.type == CardType.WHITE ? .white : .black).ignoresSafeArea()
-            
+        Section(header: Text("Card").font(.title)) {
+            TextEditor(text: $card.text)
+                .font(.title2)
+                .padding()
+                .onTapGesture{
+                    card.text = text
+                }
+        }
     }
 }
 
 struct CardDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CardDetail(card: packs[0].cards[2])
+        CardDetail(card: getPacks()[0].cards[2])
     }
 }

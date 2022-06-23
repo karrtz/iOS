@@ -16,6 +16,6 @@ struct PackDetail: View {
 
 struct PackDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PackDetail(pack: packs[0])
+        PackDetail(pack: getPacks()[0])
     }
 }

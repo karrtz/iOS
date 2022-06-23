@@ -4,7 +4,7 @@
 //
 //  Created by Alex Jenke on 19.06.22.
 //
-
+/*
 import XCTest
 @testable import karrtz
 
@@ -34,3 +34,4 @@ class karrtzTests: XCTestCase {
     }
 
 }
+*/

@@ -10,7 +10,7 @@ import SwiftUI
 struct PackList: View {
     var body: some View {
         NavigationView {
-            List(packs) { pack in
+            List(getPacks()) { pack in
                 NavigationLink {
                     PackDetail(pack: pack)
                 } label: {
