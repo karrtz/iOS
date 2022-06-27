@@ -18,7 +18,7 @@ struct PackRow: View {
     
     var body: some View {
         ZStack {
-            Button(action: {shown = true}, label: {row})
+            Button(action: {shown = true}, label: {row}).foregroundColor( .primary)
         }
         .sheet(isPresented: $shown, onDismiss: {
             save(pack:pack)

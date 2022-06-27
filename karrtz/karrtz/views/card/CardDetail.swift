@@ -8,29 +8,23 @@
 import SwiftUI
 
 struct CardDetail: View {
-    @ObservedObject var card: Card
-    @State var text : String
-    @State var type : CardType
+    @Binding var card: Card
+    @Binding var cards : [Card]
     var pack : Pack
-    
-    init(card: Card, pack : Pack) {
-        self.card = card
-        self.text = card.text
-        self.type = card.type
-        self.pack = pack
-    }
     
     var body: some View {
         //Color(card.type.rawValue).ignoresSafeArea()
         Form{
             Section(header: Text("Type")) {
-                Picker(selection: $type, label: Text("Card Type")) {
+                Picker(selection: $card.type, label: Text("Card Type")) {
                     Text("white").tag(CardType.WHITE)
                     Text("black").tag(CardType.BLACK)
+                        
                 }
-                .onChange(of: type) { newvalue in
-                    print("type \(card.type.rawValue) should now be \(type)")
-                    card.type = type
+                .pickerStyle(MenuPickerStyle())
+                .onChange(of: card.type) { newvalue in
+                    //print("type \(card.type.rawValue) should now be \(type)")
+                    //$card.type = type
                     save(pack: pack) //todo update view and save
                     }
             }
@@ -44,16 +38,10 @@ struct CardDetail: View {
                     //.padding()
                     .frame(minHeight: 150)
                     .onTapGesture{
-                        card.text = text
+                        //card.text = text
                         save(pack: pack)
                     }
             }
         }
-    }
-}
-
-struct CardDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        CardDetail(card: getPacks()[0].cards[2], pack: getPacks()[0])
     }
 }

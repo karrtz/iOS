@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CardCell: View {
-    var card : Card
-    var pack : Pack
+    @State var card : Card
+    @State var pack : Pack
     @State var shown : Bool = false
     
     var onChange = {}
@@ -28,7 +28,7 @@ struct CardCell: View {
         })
         {
             NavigationView {
-                CardDetail(card: card, pack: pack)
+                CardDetail(card: $card, cards: $pack.cards, pack: pack)
                     .navigationTitle(card.text)
                     .navigationBarTitleDisplayMode(.inline)
             }

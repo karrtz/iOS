@@ -26,8 +26,11 @@ struct PackDetail: View {
         }
         .onDisappear() {
             save(pack: pack)
-            packs.append(Pack(name: "temp", id: -1))
-            packs.removeLast()
+            //packs.append(Pack(name: "temp", id: -1))
+            //packs.removeLast()
+            packs.remove(at:packs.firstIndex(of: pack)!)
+            packs.append(pack)
+            
         }
     }
 }

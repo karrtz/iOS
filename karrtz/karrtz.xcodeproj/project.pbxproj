@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752EE8232869E26C0030808D /* JsonExportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752EE8222869E26C0030808D /* JsonExportFile.swift */; };
 		754A7CD62860AA9800B306DA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CD52860AA9800B306DA /* Card.swift */; };
 		754A7CD82860AADD00B306DA /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CD72860AADD00B306DA /* CardType.swift */; };
 		754A7CDA2860B39D00B306DA /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A7CD92860B39D00B306DA /* Pack.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752EE8222869E26C0030808D /* JsonExportFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonExportFile.swift; path = ../../../../../../../.Trash/JsonExportFile.swift; sourceTree = "<group>"; };
 		754A7CD52860AA9800B306DA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		754A7CD72860AADD00B306DA /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		754A7CD92860B39D00B306DA /* Pack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		754A7CD42860AA7900B306DA /* model */ = {
 			isa = PBXGroup;
 			children = (
+				752EE8222869E26C0030808D /* JsonExportFile.swift */,
 				754A7CDD2860DDF700B306DA /* ModelData.swift */,
 				754A7CD52860AA9800B306DA /* Card.swift */,
 				754A7CD72860AADD00B306DA /* CardType.swift */,
@@ -349,6 +352,7 @@
 				7550EE13285FB1040006B577 /* ContentView.swift in Sources */,
 				754A7CEC2861B4F500B306DA /* CardList.swift in Sources */,
 				754A7CDA2860B39D00B306DA /* Pack.swift in Sources */,
+				752EE8232869E26C0030808D /* JsonExportFile.swift in Sources */,
 				754A7CDE2860DDF700B306DA /* ModelData.swift in Sources */,
 				7550EDE3285F95B90006B577 /* karrtzApp.swift in Sources */,
 				754A7CE62860F38700B306DA /* PackDetail.swift in Sources */,
@@ -441,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -495,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -521,7 +525,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -551,7 +555,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

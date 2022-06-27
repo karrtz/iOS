@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 //var packs: [Pack] = load("PacksData.json") //funktioniert weil Pack decodable ist.
 func getPacks() -> [Pack] {
@@ -22,10 +23,27 @@ func getPacks() -> [Pack] {
     return packs
 }
 
+func addToPacks(packString : String, packs: [Pack]) throws -> [Pack]  {
+    var packs = getPacks()
+    let data: Data = packString.data(using: .utf8)!
+    
+    let decoder = JSONDecoder()
+    var largestId : Int = 0
+    for pack in packs {
+        largestId = largestId < pack.id ? pack.id : largestId
+    }
+    
+    let addedPacks : [Pack] = try decoder.decode([Pack].self, from: data)
+    addedPacks.forEach({$0.id = $0.id <= largestId ? largestId+$0.id : $0.id})
+    packs.append(contentsOf: addedPacks)
+    save(packs: packs)
+    return packs
+}
+
 private func load<T: Decodable>() -> T {
     
     
-    print(UserDefaults.standard.string(forKey: "packs")!)
+    //print(UserDefaults.standard.string(forKey: "packs")!)
     
     let data: Data = (UserDefaults.standard.string(forKey: "packs")?.data(using: .utf8))!
     
@@ -57,18 +75,10 @@ func save(pack: Pack) {
     packsArray.append(pack)
     packsArray.sort()
     packsArray.forEach({$0.cards.sort()})
-    save("PacksData.json", packs: packsArray)
+    save(packs: packsArray)
 }
 
-func save(packs : Array<Pack>) {
-    save("PacksData.json", packs: packs)
-}
-
-func save(_ filename: String, packs : Array<Pack>) {
-    /*guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-    else {
-        fatalError("Could not find \(filename) in main bundle")
-    }*/
+func createJsonString(packs: [Pack]) -> String{
     var jsonString : String = "[\n"
     
     for pack in packs {
@@ -90,10 +100,24 @@ func save(_ filename: String, packs : Array<Pack>) {
     }
     jsonString.remove(at: jsonString.lastIndex(of: ",")!)
     jsonString += "]"
+    return jsonString
+}
+
+func getPackFile(pack: Pack) -> FileDocument{
+    let jsonString = createJsonString(packs: [pack])
+    return JsonExportFILE(jsonString: jsonString)
+}
+
+func save(packs : Array<Pack>) {
+    /*guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+    else {
+        fatalError("Could not find \(filename) in main bundle")
+    }*/
+    
     //print(jsonString)
-    
+    var jsonString = createJsonString(packs: packs)
     UserDefaults.standard.set(jsonString, forKey: "packs")
-    
+    print("The following was just saved: " + jsonString)
     /*
     if let jasonData = jsonString.data(using: .utf8) {
         do {

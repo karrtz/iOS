@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CardType :String, Decodable {
+enum CardType :String, Decodable, Equatable {
     case BLACK = "black"
     case WHITE = "white"
 }
