@@ -8,7 +8,15 @@
 import Foundation
 
 open
-class Pack : Identifiable, Decodable {
+class Pack : Identifiable, Decodable, Comparable, ObservableObject {
+    public static func < (lhs: Pack, rhs: Pack) -> Bool {
+        lhs.id < rhs.id
+    }
+    
+    public static func == (lhs: Pack, rhs: Pack) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     
     init(name : String, id : Int) {
         self.name = name

@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct PackDetail: View {
-    var pack : Pack
+    @Binding var pack : Pack
+    @Binding var packs : [Pack]
+
     var body: some View {
-        CardList(pack: pack)
+        Form {
+            Section(header: Text("Name")) {
+                TextEditor(text: $pack.name)
+                    .onTapGesture {
+                        print("tap gesture")
+                        pack.name = pack.name
+                        //save(pack: pack)
+                    }
+                    .frame(minHeight: 150)
+            }
+            
+        }
+        .onDisappear() {
+            save(pack: pack)
+            packs.append(Pack(name: "temp", id: -1))
+            packs.removeLast()
+        }
     }
 }
-
+/*
 struct PackDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PackDetail(pack: getPacks()[0])
+        PackDetail(pack: $getPacks()[0])
     }
-}
+}*/

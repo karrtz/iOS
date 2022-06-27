@@ -12,7 +12,7 @@ struct CardList: View {
     var pack : Pack
     @State var cards : [Card] //= pack.cards
     init(pack : Pack){
-        cards = pack.cards
+        cards = pack.cards.sorted()
         self.pack = pack
     }
     
@@ -22,17 +22,24 @@ struct CardList: View {
             ForEach(cards, id: \.self.id) {card in
                 Section{
                 
-                    NavigationLink(destination: CardDetail(card: card)) {
-                        CardCell(card: card).padding()
-                            
-                    }.listRowBackground(card.type == CardType.WHITE ? Color.white : Color.black)
+                    //NavigationLink(destination: CardDetail(card: card, pack: pack)) {
+                    CardCell(card: card, pack: pack)
+                        .onChange {
+                            update()
+                        }
+                        .padding()
+                    //}
+                    .listRowBackground(card.type == CardType.WHITE ? Color("WhiteCardColor") : Color("BlackCardColor"))
+                        .foregroundColor(card.type == CardType.WHITE ? .black : .white)
                         
                 }
             }
             .onDelete(perform: delete)
             
         }
-    
+        .onAppear {
+            update()
+        }
         .navigationTitle(pack.name)
         .toolbar {
             
@@ -50,6 +57,7 @@ struct CardList: View {
         
         var card : Card = Card(id: pack.cards.count + 1,text:"addedCard", type: CardType.WHITE)
         cards.append(card)
+        cards.sort()
         pack.cards = cards
         save(pack: pack)
     }
@@ -58,8 +66,12 @@ struct CardList: View {
             cards.remove(atOffsets: offsets)
         pack.cards = cards
         save(pack: pack)
-        }
-        
+    }
+    
+    private func update() {
+        cards.append(Card(id: -1, text: "", type: CardType.WHITE))
+        cards.removeLast()
+    }
 }
 
 

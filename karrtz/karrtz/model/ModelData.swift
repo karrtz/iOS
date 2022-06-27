@@ -9,13 +9,28 @@ import Foundation
 
 //var packs: [Pack] = load("PacksData.json") //funktioniert weil Pack decodable ist.
 func getPacks() -> [Pack] {
-    load()
+    guard let data = (UserDefaults.standard.string(forKey: "packs")?.data(using: .utf8))
+    else {
+        return []
+    }
+    let packs : [Pack] = load();
+    packs.forEach({
+        $0.name = $0.name.replacingOccurrences(of: "bananaBread", with: "\n")
+        $0.cards.forEach({
+            $0.text = $0.text.replacingOccurrences(of: "bananaBread", with: "\n")
+        })})
+    return packs
 }
 
-func load<T: Decodable>() -> T {
+private func load<T: Decodable>() -> T {
+    
+    
+    print(UserDefaults.standard.string(forKey: "packs")!)
     
     let data: Data = (UserDefaults.standard.string(forKey: "packs")?.data(using: .utf8))!
     
+    
+    //UserDefaults.standard.set(nil, forKey: "packs")
     /*guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
     else {
         fatalError("Could not find \(filename) in main bundle")
@@ -36,7 +51,12 @@ func load<T: Decodable>() -> T {
 }
 
 func save(pack: Pack) {
-    let packsArray = [pack]
+    var packsArray = getPacks()
+    packsArray.sort()
+    packsArray.removeAll(where: {$0.id == pack.id})
+    packsArray.append(pack)
+    packsArray.sort()
+    packsArray.forEach({$0.cards.sort()})
     save("PacksData.json", packs: packsArray)
 }
 
@@ -53,14 +73,14 @@ func save(_ filename: String, packs : Array<Pack>) {
     
     for pack in packs {
         jsonString += "\t{\n"
-        jsonString += "\t\t \"name\": \"\(pack.name)\",\n"
+        jsonString += "\t\t \"name\": \"\(pack.name.replacingOccurrences(of: "\n", with: "bananaBread"))\",\n"
         //jsonString += "\t\t \"text\": \"\(pack.text)\",\n"
         jsonString += "\t\t \"id\": \(pack.id),\n"
         jsonString += "\t\t \"cards\": [\n"
         for card in pack.cards {
             jsonString += "\t\t\t{\n"
             jsonString += "\t\t\t \"id\": \(card.id),\n"
-            jsonString += "\t\t\t \"text\": \"\(card.text)\",\n"
+            jsonString += "\t\t\t \"text\": \"\(card.text.replacingOccurrences(of: "\n", with: "bananaBread"))\",\n"
             jsonString += "\t\t\t \"type\": \"\(card.type.rawValue)\"\n"
             jsonString += "\t\t\t},\n"
         }
@@ -70,7 +90,7 @@ func save(_ filename: String, packs : Array<Pack>) {
     }
     jsonString.remove(at: jsonString.lastIndex(of: ",")!)
     jsonString += "]"
-    print(jsonString)
+    //print(jsonString)
     
     UserDefaults.standard.set(jsonString, forKey: "packs")
     

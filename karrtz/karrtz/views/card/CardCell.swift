@@ -9,13 +9,43 @@ import SwiftUI
 
 struct CardCell: View {
     var card : Card
+    var pack : Pack
+    @State var shown : Bool = false
+    
+    var onChange = {}
+    
+    func onChange (_ callBack : @escaping () -> ()) -> some View {
+        CardCell(card: card, pack: pack, shown: shown, onChange: callBack)
+    }
+    
     var body: some View {
+        ZStack {
+            Button(action: {shown = true}, label: {cell})
+        }
+        .sheet(isPresented: $shown, onDismiss: {
+            save(pack:pack)
+            self.onChange()
+        })
+        {
+            NavigationView {
+                CardDetail(card: card, pack: pack)
+                    .navigationTitle(card.text)
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            
+            
+            .foregroundColor(Color.primary)
+        }
+        
+        
+    }
+    var cell: some View {
         //Color(.black).ignoresSafeArea()
         VStack(alignment: .center) {
             Text(card.text)
                 .font(.title2)
                 //.foregroundColor((Color(card.type.rawValue).colorInvert() as! Color))
-                .foregroundColor(card.type == CardType.WHITE ? .black : .white)
+                //.foregroundColor(card.type == CardType.WHITE ? .black : .white)
                 .frame(height: 150, alignment: .center)
                 //.listRowBackground(card.type == CardType.WHITE ? Color.black : Color.white)
                 
@@ -39,11 +69,12 @@ struct CardCell: View {
         
     }
     
+    
 
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        CardCell(card: getPacks()[0].cards[0])
+        CardCell(card: getPacks()[0].cards[0], pack: getPacks()[0])
     }
 }
